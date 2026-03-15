@@ -1,0 +1,14 @@
+{
+  "name": "sabine-ruh-house",
+  "version": "1.0.0",
+  "description": "Sabine Ruh House — Literary Platform",
+  "scripts": {
+    "start": "serve . -p ${PORT:-3000} -s"
+  },
+  "dependencies": {
+    "serve": "^14.2.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
