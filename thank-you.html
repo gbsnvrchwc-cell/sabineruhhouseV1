@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Thank You — Sabine Ruh House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .ty-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+      position: relative;
+      background: var(--bg);
+    }
+
+    .ty-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(184,145,58,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .ty-inner {
+      position: relative;
+      max-width: 580px;
+      width: 100%;
+    }
+
+    .ty-icon {
+      width: 64px;
+      height: 64px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 26px;
+    }
+
+    .ty-eyebrow {
+      font-family: 'Crimson Pro', serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .ty-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 7vw, 62px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .ty-heading em {
+      font-style: italic;
+      color: var(--gold-l);
+    }
+
+    .ty-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 20px auto;
+      opacity: 0.6;
+    }
+
+    .ty-message {
+      font-family: 'Crimson Pro', serif;
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 36px;
+      font-style: italic;
+    }
+
+    .ty-card {
+      background: var(--card);
+      border: 1px solid var(--border-l);
+      padding: 32px 36px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .ty-card-title {
+      font-family: 'Crimson Pro', serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .ty-card-book {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .ty-card-sub {
+      font-family: 'Crimson Pro', serif;
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .ty-features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ty-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .ty-feature-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .ty-download-btn {
+      display: block;
+      width: 100%;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 16px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .ty-download-btn:hover {
+      background: var(--gold-l);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(184,145,58,0.35);
+    }
+
+    .ty-download-note {
+      font-family: 'Crimson Pro', serif;
+      font-size: 12px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .ty-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .ty-back:hover { color: var(--gold); }
+
+    .ty-footer-note {
+      margin-top: 40px;
+      font-family: 'Crimson Pro', serif;
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .ty-footer-note a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .ty-footer-note a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="/">Sabine <span>Ruh House</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#books">Books</a></li>
+    <li><a href="/#guide-section">The Guide</a></li>
+    <li><a href="/#tools">Author Tools</a></li>
+    <li><a href="/#about">About</a></li>
+  </ul>
+</nav>
+
+<div class="ty-page">
+  <div class="ty-inner">
+
+    <div class="ty-icon">✦</div>
+
+    <div class="ty-eyebrow">Purchase Confirmed</div>
+
+    <h1 class="ty-heading">Thank <em>You</em></h1>
+
+    <div class="ty-rule"></div>
+
+    <p class="ty-message">
+      Your purchase is confirmed. Payhip has emailed your download link — check your inbox. If you need it again, your download is also available below.
+    </p>
+
+    <div class="ty-card">
+      <div class="ty-card-title">Your Purchase</div>
+      <div class="ty-card-book">From Idea to Bookshelf</div>
+      <div class="ty-card-sub">A Sophisticated Guide to Creating Children's Books That Matter</div>
+
+      <div class="ty-features">
+        <div class="ty-feature"><span class="ty-feature-dot"></span> 10 essential steps from idea to published book</div>
+        <div class="ty-feature"><span class="ty-feature-dot"></span> Story architecture, manuscript craft &amp; revision</div>
+        <div class="ty-feature"><span class="ty-feature-dot"></span> Finding an illustrator &amp; publishing pathways</div>
+        <div class="ty-feature"><span class="ty-feature-dot"></span> ISBN, copyright, pricing &amp; launch strategy</div>
+        <div class="ty-feature"><span class="ty-feature-dot"></span> Written by award-winning author Sabine Ruh House</div>
+      </div>
+
+      <a href="https://payhip.com/b/mOM6k" target="_blank" class="ty-download-btn">
+        ↓ Access Your Download
+      </a>
+      <p class="ty-download-note">Opens Payhip · Check your email too</p>
+    </div>
+
+    <a href="/" class="ty-back">← Return to sabineruhhouse.live</a>
+
+    <p class="ty-footer-note">
+      Questions about your purchase? Email us at
+      <a href="mailto:hello@sabineruhhouse.live">hello@sabineruhhouse.live</a><br>
+      Explore all books at <a href="https://www.amazon.com/stores/Sabine-Ruh-House/author/B0BSZY138K" target="_blank">Amazon</a>
+    </p>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function () {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
