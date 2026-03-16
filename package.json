@@ -1,7 +1,6 @@
-{
+json{
   "name": "sabine-ruh-house",
   "version": "2.0.0",
-  "description": "Sabine Ruh House — Literary Platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
