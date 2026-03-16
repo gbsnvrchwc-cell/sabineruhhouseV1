@@ -15,8 +15,8 @@ if (!process.env.ANTHROPIC_API_KEY) {
 // ── CORS headers — allows your custom domain to call the API ────────────────
 app.use((req, res, next) => {
   const allowed = [
-    'https://sabineruhhouse.com',
-    'https://www.sabineruhhouse.com',
+    'https://sabineruhhouse.live',
+    'https://www.sabineruhhouse.live',
     /\.railway\.app$/
   ];
   const origin = req.headers.origin || '';
